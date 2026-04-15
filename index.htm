@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KaajoCutz</title>
+<style>
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1e1e2f, #d4af37); /*#fdfdfd;*/ 
+    color: white: /*#333;*/
+}
+
+<!--<header {
+    background: linear-gradient(135deg, #1e1e2f, #d4af37);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+header h1 {
+    font-size: 3.5em;
+}
+
+header button {
+    margin-top: 20px;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 30px;
+    background: white;
+    color: #1e1e2f;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+}-->
+
+header {
+    background: url('https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+	font-family: Andale Mono, monospace;
+}
+
+.overlay {
+    background: rgba(0,0,0,0.55);
+    padding: 50px;
+    border-radius: 15px;
+}
+
+header h1 {
+    font-size: 4em;
+    color: white;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+header p {
+    font-size: 1.4em;
+    color: #f5f5f5;
+    margin-bottom: 25px;
+}
+
+header button {
+    padding: 14px 35px;
+    font-size: 1em;
+    background: #d4af37;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+nav {
+    background: #111;
+    text-align: center;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    margin: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #d4af37;
+}
+
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.services, .gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    width: 250px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.price {
+    color: #d4af37;
+    font-weight: bold;
+}
+
+.gallery img {
+    width: 300px;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.review {
+    background: #f8f8f8;
+    margin: 15px auto;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.contact {
+    background: #1e1e2f;
+    color: white;
+}
+
+footer {
+    background: #111;
+    color: white;
+    padding: 20px;
+}
+
+form input, form button {
+    width: 250px;
+    padding: 12px;
+    margin: 8px;
+    border-radius: 8px;
+    border: none;
+}
+
+form button {
+    background: #d4af37;
+    color: white;
+    cursor: pointer;
+}
+
+.card button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #d4af37;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.card img {
+    border-radius: 12px;
+    height: 180px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+form input, form select, form button {
+    width: 250px;
+    padding: 12px;
+    margin: 8px;
+    border-radius: 8px;
+    border: none;
+}
+
+form button {
+    background: #d4af37;
+    color: white;
+    cursor: pointer;
+}
+
+#booking {
+    padding: 60px 20px;
+    text-align: center;
+    background: #f8f8f8;
+}
+
+#booking button {
+    padding: 14px 30px;
+    background: #d4af37;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+#map {
+    padding: 60px 20px;
+    text-align: center;
+    background: white;
+}
+
+#order {
+    padding: 60px 20px;
+    text-align: center;
+    background: #f8f8f8;
+}
+
+#order input, #order select, #order button {
+    width: 250px;
+    padding: 12px;
+    margin: 8px;
+    border-radius: 8px;
+    border: none;
+}
+
+@media (max-width: 768px) {
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    nav a {
+        margin: 10px 0;
+        display: block;
+    }
+
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    header p {
+        font-size: 1.1em;
+    }
+
+    .overlay {
+        padding: 25px;
+    }
+
+    .services,
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    .gallery img {
+        width: 90%;
+        height: auto;
+    }
+
+    form input,
+    form select,
+    form button {
+        width: 90%;
+    }
+
+    iframe {
+        height: 300px;
+    }
+}
+
+
+</style>
+</head>
+<body>
+
+<!--<header>
+    <h1>KaajoCutz</h1>
+    <p>Modern hårklippning med premium känsla</p>
+	<a href="https://wa.me/4670000000">
+    <a href="tel:0700000000">
+        <button>Boka Tid</button>
+    </a>
+</header>> ---->
+
+<header>
+    <div class="overlay">
+        <h1>KaajoCutz</h1>
+        <p>Modern hårklippning med premium känsla och personlig stil</p>
+		<p>Din stil vårt hantverk</p>
+
+		<a href="https://wa.me/46764274107?text=Hej! jag vill boka en klipptid" target="_blank">
+			<button>Boka Klipptid</button>
+		</a>
+    </div>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+	<a href="#products">Products</a>
+	<a href="#booking">Booking</a>
+	<a href="#map">Map</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+    <h2>About</h2>
+    <p>Saving lives since 2020©</p>
+</section>
+
+<section id="services">
+    <h2>Services</h2>
+    <div class="services">
+        <div class="card">
+            <h3>Herrklippning</h3>
+            <p>Modern fade och klassisk stil</p>
+            <p class="price">100 kr</p>
+        </div>
+        <div class="card">
+            <h3>Skäggtrimning</h3>
+            <p>Professionell finish</p>
+            <p class="price">50 kr</p>
+        </div>
+        <div class="card">
+            <h3>Barnklippning</h3>
+            <p>Snabb service</p>
+            <p class="price">60 kr</p>
+        </div>
+    </div>
+</section>
+
+<section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1622287162716-f311baa1a2b8" alt="Frisyr 1" style="width:240px; height:auto; border-radius:15px;">
+        <img src="https://i.imgur.com/mgzt6oi.png" alt="Frisyr 2_qani" style="width:240px; height:auto; border-radius:15px;">
+        <img src="https://static.thatsup.co/content/img/article/14/jan/stockholms-vassaste-barberare-medium.jpg?1753185110" alt="Frisyr 3" style="width:240px; height:auto; border-radius:15px;">
+		<img src="https://i.imgur.com/6O4dg3f.png" alt="Frisyr 4_tim" style="width:240px; height:auto; border-radius:15px;">
+		<img src="https://i.imgur.com/c4lstWB.png" alt="Frisyr 5_mucaad" style="width:240px; height:auto; border-radius:15px;">
+		<img src="https://groomer-s.com/wp-content/uploads/2019/08/Photo2_Formation_600x600px-600x600.jpg" alt="Frisyr 6" style="width:240px; height:auto; border-radius:15px;">
+		<img src="https://i.imgur.com/zY9mtp0.png" alt="Frisyr 7_wali_väjö" style="width:240px; height:auto; border-radius:15px;">
+    </div>
+</section>
+
+<section id="products">
+    <h2>Products</h2>
+    <div class="services">
+        <div class="card">
+            <img src="https://img.kwcdn.com/product/fancy/4c24d7b3-a62c-4210-a5e1-4e4a043845ed.jpg?imageView2/2/w/800/q/70/format/avif" alt="Hårvax" width="100%">
+            <h3>Curling Styling Cream</h3>
+            <p>For strong hold and natural look</p>
+            <p class="price">99 kr</p>
+			<a href="#order">
+			<button>Köp</button></a>
+        </div>
+		
+		<div class="card">
+            <img src="https://img.kwcdn.com/product/fancy/448cec3e-9b6d-4427-9b3e-24641dd0588c.jpg?imageView2/2/w/800/q/70/format/avif" alt="Oil" width="100%">
+            <h3>Batana hair care essential oil</h3>
+            <p>For healthy and strong hair</p>
+            <p class="price">89 kr</p>
+			<a href="#order">
+			<button>Köp</button></a>
+        </div>
+
+        <div class="card">
+            <img src="https://media.viskanassets.com/v2/goodformeprod/large/HLS-1_prod1511.jpg"alt="Shampoo" width="100%">
+            <h3>Shampoo</h3>
+            <p>Hair Luxious Repair & Moisture Shampoo</p>
+            <p class="price">129 kr</p>
+			<a href="#order">
+			<button>Köp</button></a>
+        </div>
+
+        <div class="card">
+            <img src="https://m.media-amazon.com/images/I/715ynJntr1L._AC_SX522_.jpg" alt="Beardoil" width="100%">
+            <h3>Beard oil</h3>
+            <p>Softens and adds shine</p>
+            <p class="price">89 kr</p>
+			<a href="#order">
+			<button>Köp</button></a>
+        </div>
+    </div>
+</section>
+
+<section id="order">
+    <h2>Beställ Produkt</h2>
+	<form onsubmit="sendToWhatsApp(); return false;">
+		<input type="text" id="name" placeholder="Namn" required><br><br>
+
+		<input type="text" id="address" placeholder="Adress" required><br><br>
+
+		<input type="tel" id="phone" placeholder="Telefonnummer" required><br><br>
+
+		<select id="product" required>
+			<option>Curling Styling Cream</option>
+			<option>Batana Oil</option>
+			<option>Shampoo</option>
+			<option>Beard Oil</option>
+		</select><br><br>
+
+		<button type="submit">Köp Product</button>
+	</form>
+	
+	<p>Fyll i uppgifter för att slutföra din beställning.</p>
+	
+</section>
+
+<section id="booking">
+    <h2>Boka Tid Online</h2>
+
+    <a href="https://calendar.app.google/KXZRsxDi1x2GVRSW8" target="_blank">
+        <button>Boka Tid via Google</button>
+    </a>
+</section>
+
+<section id="map">
+    <h2>Hitta hit</h2>
+
+    <iframe
+        src="https://www.google.com/maps?q=Jönköping&output=embed"
+        width="100%"
+        height="400"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy">
+    </iframe>
+</section>
+
+<section id="contact" class ="contact">
+    <h2>Contact</h2>
+
+    <p> Telefon: 07X-XXX XX XX</p>
+    <p> Email: KaajoCutz@gmail.com</p>
+    <p> Ort: Jönköping/Skara</p>
+    <p> Öppet: Kvällar & helger</p>
+
+    <p>För hårklippning använder du onlinebokning eller WhatsApp.</p>
+	<p>För produkter använder du beställningsformuläret.</p>
+</section>
+
+<footer>
+    <p>© 2026 KaajoCutz</p>
+</footer>
+
+<script>
+function sendToWhatsApp() {
+    let name = document.getElementById("name").value;
+    let address = document.getElementById("address").value;
+    let phone = document.getElementById("phone").value;
+    let product = document.getElementById("product").value;
+
+    let message = `🛒 Beställning:%0A👤 Namn: ${name}%0A🏠 Adress: ${address}%0A📞 Telefon: ${phone}%0A📦 Produkt: ${product}`;
+
+    window.open(`https://wa.me/46764274107?text=${message}`, "_blank");
+}
+</script>
+</body>
+</html>
